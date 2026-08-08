@@ -4,6 +4,7 @@ function Tracklist() {
   return (
     <>
       <Track />
+      <Track />
     </>
   )
 }

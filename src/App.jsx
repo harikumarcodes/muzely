@@ -6,6 +6,7 @@ import Playlist from './Playlist/Playlist'
 function App() {
   return (
     <>
+      <h1>Jammming</h1>
       <SearchBar />
       <SearchResults />
       <Playlist />
