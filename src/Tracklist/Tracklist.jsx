@@ -1,7 +1,9 @@
+import Track from '../Track/Track'
+
 function Tracklist() {
   return (
     <>
-      
+      <Track />
     </>
   )
 }

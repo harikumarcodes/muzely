@@ -1,7 +1,9 @@
+import Tracklist from '../Tracklist/Tracklist'
+
 function SearchResults() {
   return (
     <>
-      
+      <Tracklist />      
     </>
   )
 }
