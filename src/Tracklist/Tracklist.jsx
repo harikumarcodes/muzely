@@ -1,10 +1,15 @@
 import Track from '../Track/Track'
 
-function Tracklist({isInPlaylist}) {
+function Tracklist({ tracks, isInPlaylist }) {
   return (
     <>
-      <Track isInPlaylist={isInPlaylist}/>
-      <Track isInPlaylist={isInPlaylist}/>
+      {tracks.map(track => 
+        <Track
+          key={track.id}
+          track={track}
+          isInPlaylist={isInPlaylist}
+        />
+      )}
     </>
   )
 }

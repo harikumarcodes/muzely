@@ -1,8 +1,8 @@
-function Track({isInPlaylist}) {
+function Track({ track, isInPlaylist }) {
   return (
     <>
-      <h3>Track Title</h3>
-      <p>Artist | Album</p>
+      <h3>{track.name}</h3>
+      <p>{track.artist} | {track.album}</p>
       <button>{isInPlaylist ? '-' : '+'}</button>
     </>
   )
