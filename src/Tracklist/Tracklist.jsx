@@ -1,10 +1,10 @@
 import Track from '../Track/Track'
 
-function Tracklist() {
+function Tracklist({isInPlaylist}) {
   return (
     <>
-      <Track />
-      <Track />
+      <Track isInPlaylist={isInPlaylist}/>
+      <Track isInPlaylist={isInPlaylist}/>
     </>
   )
 }

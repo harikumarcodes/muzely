@@ -4,7 +4,7 @@ function SearchResults() {
   return (
     <>
       <h2>Results</h2>
-      <Tracklist />      
+      <Tracklist isInPlaylist={false} />      
     </>
   )
 }
