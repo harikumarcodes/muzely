@@ -25,12 +25,27 @@ const tracks = [
 ]
 
 function App() {
+  const [playlistTracks, setPlaylistTracks] = useState([])
+
+  const handleAddTrack = track => { 
+    const isInPlaylist = playlistTracks.some(t => t.id === track.id)
+    if (!isInPlaylist) {
+      setPlaylistTracks(prev => [...prev, track])
+    }
+  }
+
+  const handleRemoveTrack = ({ id }) => {
+    setPlaylistTracks(prev =>
+      prev.filter(track => track.id != id)
+    )
+  }
+    
   return (
     <>
       <h1>Jammming</h1>
       <SearchBar />
-      <SearchResults tracks={tracks} />
-      <Playlist tracks={tracks} />
+      <SearchResults tracks={tracks} onAddTrack={handleAddTrack}/>
+      <Playlist tracks={playlistTracks} onRemoveTrack={handleRemoveTrack}/>
     </>
   )
 }

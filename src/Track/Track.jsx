@@ -1,9 +1,11 @@
-function Track({ track, isInPlaylist }) {
+function Track({ track, isAdded, onAction }) {
   return (
     <>
       <h3>{track.name}</h3>
       <p>{track.artist} | {track.album}</p>
-      <button>{isInPlaylist ? '-' : '+'}</button>
+      <button onClick={() => onAction(track)}>
+        {isAdded ? '-' : '+'}
+      </button>
     </>
   )
 }
