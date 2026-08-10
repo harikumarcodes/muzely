@@ -2,6 +2,7 @@ import { useState } from 'react'
 import SearchBar from './SearchBar/SearchBar'
 import SearchResults from './SearchResults/SearchResults'
 import Playlist from './Playlist/Playlist'
+import styles from './App.module.css'
 
 const tracks = [
   {
@@ -41,12 +42,14 @@ function App() {
   }
     
   return (
-    <>
+    <main className={styles.main}>
       <h1>Jammming</h1>
       <SearchBar />
-      <SearchResults tracks={tracks} onAddTrack={handleAddTrack}/>
-      <Playlist tracks={playlistTracks} onRemoveTrack={handleRemoveTrack}/>
-    </>
+      <div className={styles.panels}>
+        <SearchResults tracks={tracks} onAddTrack={handleAddTrack}/>
+        <Playlist tracks={playlistTracks} onRemoveTrack={handleRemoveTrack}/>
+      </div>
+    </main>
   )
 }
 

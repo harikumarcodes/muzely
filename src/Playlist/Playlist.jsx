@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Tracklist from '../Tracklist/Tracklist'
+import styles from './Playlist.module.css'
 
 function Playlist({ tracks, onRemoveTrack }) {
   const [playlistName, setPlaylistName] = useState('')
@@ -9,7 +10,7 @@ function Playlist({ tracks, onRemoveTrack }) {
   }
 
   return (
-    <>
+    <section className={styles.playlist}>
       <h2>Playlist</h2>
       <input
          type="text"
@@ -19,7 +20,7 @@ function Playlist({ tracks, onRemoveTrack }) {
        />
       <Tracklist tracks={tracks} isAdded={true} onTrackAction={onRemoveTrack} />
       <button>SAVE TO SPOTIFY</button>
-    </>
+    </section>
   )
 }
 
