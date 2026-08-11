@@ -1,0 +1,21 @@
+.track {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  margin: 0.5em 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  border: none;
+  background: none;
+}
