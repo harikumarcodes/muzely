@@ -11,8 +11,8 @@ function Playlist({ tracks, onRemoveTrack }) {
 
   return (
     <section className={styles.playlist}>
-      <h2>Playlist</h2>
       <input
+        className={styles.input}
          type="text"
          placeholder="Playlist Name"
          value={playlistName}
