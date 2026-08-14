@@ -1,13 +1,14 @@
 .playlist {
   display: flex;
   flex-direction: column;
-  margin: 2em;
+  gap: 0.5em;
 }
 
 .input {
   border: none;
   font-size: 1.35em;
   font-weight: bold;
+  height: 1.5em
 }
 
 .input:focus {

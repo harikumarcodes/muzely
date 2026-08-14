@@ -2,8 +2,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 3em;
 }
 
-.panels {
+main .panels {
   display: flex;
+  justify-content: center;
+  gap: 5em;
 }
