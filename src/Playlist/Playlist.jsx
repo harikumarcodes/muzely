@@ -19,7 +19,7 @@ function Playlist({ tracks, onRemoveTrack }) {
          onChange={handlePlaylistNameChange}
        />
       <Tracklist tracks={tracks} isAdded={true} onTrackAction={onRemoveTrack} />
-      <button>SAVE TO SPOTIFY</button>
+      <button>SAVE PLAYLIST</button>
     </section>
   )
 }
