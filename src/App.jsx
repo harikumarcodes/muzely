@@ -28,6 +28,9 @@ function App() {
 
     try {
       const results = await itunes.search(term)
+      if (!results.length) {
+        alert('Nothing found. Please try searching for something else.')
+      }
       setSearchResults(results)
     } catch (e) {
       console.error(e)
