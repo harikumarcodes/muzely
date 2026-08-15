@@ -5,7 +5,7 @@ function Tracklist({ tracks, isAdded, onTrackAction }) {
     <>
       {tracks.map(track => 
         <Track
-          key={track.id}
+          key={track.trackId}
           track={track}
           isAdded={isAdded}
           onAction={onTrackAction}

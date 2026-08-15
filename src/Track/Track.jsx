@@ -4,8 +4,8 @@ function Track({ track, isAdded, onAction }) {
   return (
     <section className={styles.track}>
       <div className={styles.details}>
-        <h3>{track.name}</h3>
-        <p>{track.artist} | {track.album}</p>
+        <h3>{track.trackName}</h3>
+        <p>{track.artistName} | {track.collectionName}</p>
       </div>
       <button className={styles.button} onClick={() => onAction(track)}>
         {isAdded ? '-' : '+'}
