@@ -21,14 +21,19 @@ function App() {
   const [searchResults, setSearchResults] = useState([])
   const [playlistName, setPlaylistName] = useState(playlist.name)
   const [playlistTracks, setPlaylistTracks] = useState(playlist.tracks)
+  const [isSearching, setIsSearching] = useState(false)
 
   const handleSearch = async (term) => {
+    setIsSearching(true)
+
     try {
       const results = await itunes.search(term)
       setSearchResults(results)
     } catch (e) {
       console.error(e)
       alert('Unable to search for music. Please try again.')
+    } finally {
+      setIsSearching(false)
     }
   }
 
@@ -62,7 +67,7 @@ function App() {
   return (
     <main className={styles.main}>
       <h1>Jammming</h1>
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar onSearch={handleSearch} isSearching={isSearching} />
       <div className={styles.panels}>
         <SearchResults tracks={searchResults} onAddTrack={handleAddTrack} />
         <Playlist

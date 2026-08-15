@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './SearchBar.module.css'
 
-function SearchBar({ onSearch }) {
+function SearchBar({ onSearch, isSearching }) {
   const [searchTerm, setSearchTerm] = useState('')
 
   const handleInputChange = e => {
@@ -16,7 +16,12 @@ function SearchBar({ onSearch }) {
         value={searchTerm}
         onChange={handleInputChange}
       />
-      <button onClick={() => onSearch(searchTerm)}>SEARCH</button>
+      <button
+        onClick={() => onSearch(searchTerm)}
+        disabled={isSearching}
+      >
+        {isSearching ? 'SEARCHING...' : 'SEARCH'}
+      </button>
     </section>
   )
 }
