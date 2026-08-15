@@ -10,18 +10,14 @@ const itunes = {
 
     const url = `${BASE_URL}?${params}`
 
-    try {
-      const response = await fetch(url)
+    const response = await fetch(url)
 
-      if (!response.ok) {
-        throw new Error(`iTunes API request failed: ${response.status}`)
-      }
-
-      const json = await response.json()
-      return json.results
-    } catch(e) {
-      console.error(e)
+    if (!response.ok) {
+      throw new Error(`iTunes API request failed: ${response.status}`)
     }
+
+    const json = await response.json()
+    return json.results
   }
 }
 

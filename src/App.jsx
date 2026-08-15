@@ -23,8 +23,13 @@ function App() {
   const [playlistTracks, setPlaylistTracks] = useState(playlist.tracks)
 
   const handleSearch = async (term) => {
-    const results = await itunes.search(term)
-    setSearchResults(results)
+    try {
+      const results = await itunes.search(term)
+      setSearchResults(results)
+    } catch (e) {
+      console.error(e)
+      alert('Unable to search for music. Please try again.')
+    }
   }
 
   const handleAddTrack = track => { 
