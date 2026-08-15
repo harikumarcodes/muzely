@@ -5,9 +5,22 @@ import Playlist from './Playlist/Playlist'
 import itunes from './api/itunes'
 import styles from './App.module.css'
 
+const loadPlaylist = () => {
+  const saved = localStorage.getItem('playlist')
+  if (!saved) {
+    return {
+      name: "",
+      tracks: []
+    }
+  }
+  return JSON.parse(saved)
+}
+
 function App() {
+  const [playlist] = useState(loadPlaylist)
   const [searchResults, setSearchResults] = useState([])
-  const [playlistTracks, setPlaylistTracks] = useState([])
+  const [playlistName, setPlaylistName] = useState(playlist.name)
+  const [playlistTracks, setPlaylistTracks] = useState(playlist.tracks)
 
   const handleSearch = async (term) => {
     const results = await itunes.search(term)
@@ -28,14 +41,32 @@ function App() {
       prev.filter(track => track.trackId !== trackId)
     )
   }
+
+  const handleSavePlaylist = () => {
+    const playlist = {
+      name: playlistName,
+      tracks: playlistTracks,
+    }
+
+    localStorage.setItem(
+      'playlist',
+      JSON.stringify(playlist)
+    )
+  }
     
   return (
     <main className={styles.main}>
       <h1>Jammming</h1>
       <SearchBar onSearch={handleSearch} />
       <div className={styles.panels}>
-        <SearchResults tracks={searchResults} onAddTrack={handleAddTrack}/>
-        <Playlist tracks={playlistTracks} onRemoveTrack={handleRemoveTrack}/>
+        <SearchResults tracks={searchResults} onAddTrack={handleAddTrack} />
+        <Playlist
+          tracks={playlistTracks}
+          onRemoveTrack={handleRemoveTrack}
+          name={playlistName}
+          onNameChange={setPlaylistName}
+          onSave={handleSavePlaylist}
+        />
       </div>
     </main>
   )

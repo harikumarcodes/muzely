@@ -1,12 +1,9 @@
-import { useState } from 'react'
 import Tracklist from '../Tracklist/Tracklist'
 import styles from './Playlist.module.css'
 
-function Playlist({ tracks, onRemoveTrack }) {
-  const [playlistName, setPlaylistName] = useState('')
-
+function Playlist({ tracks, onRemoveTrack, name, onNameChange, onSave }) {
   const handlePlaylistNameChange = e => {
-    setPlaylistName(e.target.value)
+    onNameChange(e.target.value)
   }
 
   return (
@@ -15,11 +12,11 @@ function Playlist({ tracks, onRemoveTrack }) {
         className={styles.input}
          type="text"
          placeholder="Playlist Name"
-         value={playlistName}
+         value={name}
          onChange={handlePlaylistNameChange}
        />
       <Tracklist tracks={tracks} isAdded={true} onTrackAction={onRemoveTrack} />
-      <button>SAVE PLAYLIST</button>
+      <button onClick={onSave}>SAVE PLAYLIST</button>
     </section>
   )
 }
