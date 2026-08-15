@@ -24,6 +24,11 @@ function App() {
   const [isSearching, setIsSearching] = useState(false)
 
   const handleSearch = async (term) => {
+    const searchTerm = term.trim()
+    if (!searchTerm) {
+      return
+    }
+
     setIsSearching(true)
 
     try {
