@@ -1,7 +1,9 @@
 .playlist {
   display: flex;
   flex-direction: column;
+  flex: 2 1 0;
   gap: 0.5em;
+  min-width: 0;
 }
 
 .input {

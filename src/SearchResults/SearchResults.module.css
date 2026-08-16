@@ -1,7 +1,9 @@
 .results {
   display: flex;
   flex-direction: column;
+  flex: 3 1 0;
   gap: 0.5em;
+  min-width: 0;
 }
 
 .results h2 {
