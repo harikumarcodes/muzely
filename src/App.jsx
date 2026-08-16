@@ -32,7 +32,7 @@ function App() {
     setIsSearching(true)
 
     try {
-      const results = await itunes.search(term)
+      const results = await itunes.search(searchTerm)
       if (!results.length) {
         alert('Nothing found. Please try searching for something else.')
       }
