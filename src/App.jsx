@@ -74,7 +74,7 @@ function App() {
     
   return (
     <main className={styles.main}>
-      <h1>Jammming</h1>
+      <h1>Muzely</h1>
       <SearchBar onSearch={handleSearch} isSearching={isSearching} />
       <div className={styles.panels}>
         <SearchResults tracks={searchResults} onAddTrack={handleAddTrack} />
