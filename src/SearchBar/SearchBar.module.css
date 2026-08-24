@@ -1,3 +1,21 @@
-.search-bar {
+.searchBar {
   display: flex;
+  gap: 1em;
+  width: 100%;
+  max-width: 500px;
 }
+
+.input {
+  background-color: #21234a;
+  color: white;
+  border: none;
+  padding: 0.5em;
+  border-radius: 15px;
+  flex: 3;
+}
+
+.button {
+  flex: 1;
+}
+
+

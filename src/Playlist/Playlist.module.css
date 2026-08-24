@@ -7,10 +7,17 @@
 }
 
 .input {
+  background-color: transparent;
+  color: white;
   border: none;
-  font-size: 1.35em;
+  font-size: 1.25em;
   font-weight: bold;
-  height: 1.5em
+  height: 1.5em;
+  text-transform: uppercase;
+}
+
+input::placeholder {
+  color: #3c426c;
 }
 
 .input:focus {

@@ -1,9 +1,18 @@
 main {
+  font-family: 'Roboto', sans-serif;
+  background-color: #171c36;
+  color: #d8d9fd;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3em;
+  gap: 0.25em;
   padding: 2em;
+  min-height: 100vh;
+}
+
+main h1 {
+  color: #8283ec;
+  font-size: 3.5em;
 }
 
 main .panels {
@@ -12,10 +21,23 @@ main .panels {
   width: 100%;
   max-width: 1200px;
   gap: 4em;
+  margin-top: 1.5em;
+}
+
+main .panels > * {
+  background-color: #262b4c;
+  padding: 2em;
+  border-radius: 15px;
+  min-height: 60vh;
 }
 
 @media (max-width: 800px) {
   main .panels {
     flex-direction: column;
+    gap: 2em;
+  }
+
+  main .panels > * {
+    min-height: auto;
   }
 }

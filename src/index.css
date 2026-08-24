@@ -1,43 +1,8 @@
-/* Include padding and border in element's width and height */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
-/* Prevent media overflow */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-/* Allow forms elements to inherit fonts */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-body {
-  /* Use full viewport height */
-  min-height: 100vh;
-
-  /* Improve font rendering on macOs and iOS */
-  -webkit-font-smoothing: antialiased;
-
-  line-height: 1.5;
-}
-
-/* Prevent text overflow */
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
+button {
+  color: white;
+  background-color: #4b4dbc;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5em;
+  font-weight: bold;
 }

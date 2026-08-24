@@ -15,10 +15,12 @@ function SearchBar({ onSearch, isSearching }) {
         placeholder="Search music"
         value={searchTerm}
         onChange={handleInputChange}
+        className={styles.input}
       />
       <button
         onClick={() => onSearch(searchTerm)}
         disabled={isSearching}
+        className={styles.button}
       >
         {isSearching ? 'SEARCHING...' : 'SEARCH'}
       </button>

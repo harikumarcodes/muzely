@@ -7,6 +7,8 @@
 }
 
 .results h2 {
-  font-size: 1.35em;
-  height: 1.5em
+  font-size: 1.25em;
+  height: 1.5em;
+  color: white;
+  text-transform: uppercase;
 }
