@@ -77,7 +77,7 @@ function App() {
       <h1>Muzely</h1>
       <SearchBar onSearch={handleSearch} isSearching={isSearching} />
       <div className={styles.panels}>
-        <SearchResults tracks={searchResults} onAddTrack={handleAddTrack} />
+        <SearchResults tracks={searchResults} onAddTrack={handleAddTrack} playlistTracks={playlistTracks}/>
         <Playlist
           tracks={playlistTracks}
           onRemoveTrack={handleRemoveTrack}
