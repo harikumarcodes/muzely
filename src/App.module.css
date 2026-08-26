@@ -41,3 +41,17 @@ main .panels > * {
     min-height: auto;
   }
 }
+
+@media (max-width: 1200px) {
+  main {
+    padding: 1.5em;
+  }
+  
+  main .panels {
+    gap: 1em;
+  }
+
+  main .panels > * {
+    flex: 1;
+  }
+}
