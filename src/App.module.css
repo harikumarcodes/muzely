@@ -15,7 +15,7 @@ main h1 {
   font-size: 3.5em;
 }
 
-main .panels {
+.panels {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -24,7 +24,7 @@ main .panels {
   margin-top: 1.5em;
 }
 
-main .panels > * {
+.panels > * {
   background-color: #262b4c;
   padding: 2em;
   border-radius: 15px;
@@ -32,13 +32,19 @@ main .panels > * {
 }
 
 @media (max-width: 800px) {
-  main .panels {
-    flex-direction: column;
-    gap: 2em;
+  main h1 {
+    font-size: 3em;
   }
 
-  main .panels > * {
+  .panels {
+    flex-direction: column;
+    gap: 2em;
+    flex: 1;
+  }
+
+  .panels > * {
     min-height: auto;
+    max-height: 40vh;
   }
 }
 
@@ -46,12 +52,12 @@ main .panels > * {
   main {
     padding: 1.5em;
   }
-  
-  main .panels {
+
+  .panels {
     gap: 1em;
   }
 
-  main .panels > * {
+  .panels > * {
     flex: 1;
   }
 }
