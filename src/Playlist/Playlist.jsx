@@ -1,7 +1,7 @@
 import Tracklist from '../Tracklist/Tracklist'
 import styles from './Playlist.module.css'
 
-function Playlist({ tracks, onRemoveTrack, name, onNameChange, onSave }) {
+function Playlist({ playlist, onRemoveTrack, onNameChange, onSave, onBack, onDelete }) {
   const handlePlaylistNameChange = e => {
     onNameChange(e.target.value)
   }
@@ -12,12 +12,12 @@ function Playlist({ tracks, onRemoveTrack, name, onNameChange, onSave }) {
         className={styles.input}
         type="text"
         placeholder="Playlist Name"
-        value={name}
+        value={playlist.name}
         onChange={handlePlaylistNameChange}
       />
-      {tracks.length ? (
+      {playlist.tracks.length ? (
         <Tracklist
-          tracks={tracks}
+          tracks={playlist.tracks}
           isAdded={true}
           onTrackAction={onRemoveTrack}
         />
@@ -25,6 +25,8 @@ function Playlist({ tracks, onRemoveTrack, name, onNameChange, onSave }) {
         <p>No tracks in playlist</p>
       )}
       <button onClick={onSave}>SAVE PLAYLIST</button>
+      <button onClick={onBack}>BACK</button>
+      <button onClick={onDelete}>DELETE</button>
     </section>
   )
 }

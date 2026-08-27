@@ -13,7 +13,6 @@
   font-size: 1.25em;
   font-weight: bold;
   height: 1.5em;
-  text-transform: uppercase;
 }
 
 input::placeholder {

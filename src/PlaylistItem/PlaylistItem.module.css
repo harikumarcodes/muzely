@@ -1,0 +1,9 @@
+.playlistItem {
+  font-size: 1.1em;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #30365b;
+  border-radius: 0;
+  text-align: left;
+  font-weight: 400;
+}

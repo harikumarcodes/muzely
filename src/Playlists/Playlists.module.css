@@ -1,0 +1,22 @@
+.playlists {
+  display: flex;
+  flex-direction: column;
+  flex: 2 1 0;
+  gap: 0.5em;
+  min-width: 0;
+}
+
+.playlists h2 {
+  font-size: 1.25em;
+  height: 1.5em;
+  color: white;
+  text-transform: uppercase;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  min-width: 0;
+  overflow-y: auto;
+}

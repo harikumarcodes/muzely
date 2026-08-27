@@ -1,7 +1,7 @@
 import Track from '../Track/Track'
 import styles from './Tracklist.module.css'
 
-function Tracklist({ tracks, isAdded, onTrackAction }) {
+function Tracklist({ tracks, isAdded, onTrackAction, hideActionButton}) {
   return (
     <div className={styles.tracklist}>
       {tracks.map(track => 
@@ -10,6 +10,7 @@ function Tracklist({ tracks, isAdded, onTrackAction }) {
           track={track}
           isAdded={isAdded}
           onAction={onTrackAction}
+          hideActionButton={hideActionButton}
         />
       )}
     </div>

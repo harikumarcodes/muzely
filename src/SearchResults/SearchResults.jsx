@@ -1,7 +1,7 @@
 import Tracklist from '../Tracklist/Tracklist'
 import styles from './SearchResults.module.css'
 
-function SearchResults({ tracks, onAddTrack, playlistTracks }) {
+function SearchResults({ tracks, onAddTrack, playlistTracks, hideActionButton }) {
   const filteredTracks = tracks.filter(track =>
     !playlistTracks.some(playlistTrack =>
       playlistTrack.trackId === track.trackId
@@ -13,7 +13,12 @@ function SearchResults({ tracks, onAddTrack, playlistTracks }) {
       <h2>Results</h2>
       
       {filteredTracks.length ? (
-        <Tracklist tracks={filteredTracks} isAdded={false} onTrackAction={onAddTrack}/>      
+        <Tracklist
+          tracks={filteredTracks}
+          isAdded={false}
+          onTrackAction={onAddTrack}
+          hideActionButton={hideActionButton}
+        />      
       ) : (
         tracks.length ? (
           <p>All results are already in the playlist</p>
