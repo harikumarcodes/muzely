@@ -1,4 +1,4 @@
-const BASE_URL = "https://itunes.apple.com/search"
+const API_URL = "/api/search"
 
 const itunes = {
   async search(term, limit=10) {
@@ -8,7 +8,7 @@ const itunes = {
       limit,
     })
 
-    const url = `${BASE_URL}?${params}`
+    const url = `${API_URL}?${params}`
 
     const response = await fetch(url)
 
